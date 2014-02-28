@@ -1,42 +1,69 @@
+////Tests
 
-##Tests
+//////Game Board View
+describe("The Game Board", function() {
+  // it("is a 3 x 3 grid", function() {
+  //   var board = new Board()
+  //   start_board = [ ["","",""],  ["","",""],  ["","",""] ]
 
-###Game Board
-#[ ["","",""],  ["","",""],  ["","",""] ]
-# the board should be a 3 x 3 grid
+  //   expect(board.grid).toBe(start_board);
+  // });
+});
 
-#At the beginning of the game the board should be empty
+describe("When I click on a cell", function() {
+  var cell;
 
-#At the end of the game a row, column, or digonal should be full
+  it("shows an X", function() {
+    cell = document.body.querySelector('td')
+    cell.click()
+    expect(cell.innerHTML).toBe("X");
+  });
+
+  // it("updates the board array", function() {
+  //   start_board = [ ["X","",""],  ["","",""],  ["","",""] ]
+
+  //   expect(board.grid).toBe(start_board);
+  // });
+
+});
 
 
-###Game Play
 
-#If I click on a square I should see an x
+//[ ["","",""],  ["","",""],  ["","",""] ]
+// the board should be a 3 x 3 grid
 
-#If I click on the same square twice, nothing should happen
+//At the beginning of the game the board should be empty
 
-#At the end of every odd round there should be an odd number of x's and o's
-
-#At the end of every even round there should be an equal number of x's and o's
+//At the end of the game a row, column, or digonal should be full or else the board should be full
 
 
-###Strategy
-##Offense
-#If the center is available, take it
-#If a row, column, or diagonal is empty except for me, fill it.
-#Else, if a row, column, or diagonal is empty, fill it.
+//////Game Play
 
-##Defense
-#If there are two x's in a row, column, or diagonal, block it
+//If I click on a square I should see an x
 
-###Winning
-# three in a row
+//If I click on the same square twice, nothing should happen
 
-# three in a column
+//At the end of every odd round there should be an odd number of x's and o's
 
-# three diagonal
+//At the end of every even round there should be an equal number of x's and o's
 
-#If I win I should see "You win"
 
-#If the computer wins I should see "Computer wins"
+//////Strategy
+////Offense
+//If the center is available, take it
+//If a row, column, or diagonal is empty except for me, fill it.
+//Else, if a row, column, or diagonal is empty, fill it.
+
+////Defense
+//If there are two x's in a row, column, or diagonal, block it
+
+//////Winning
+// three in a row
+
+// three in a column
+
+// three diagonal
+
+//If I win I should see "You win"
+
+//If the computer wins I should see "Computer wins"
