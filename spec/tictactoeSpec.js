@@ -10,20 +10,20 @@ describe("The Game Board", function() {
   // });
 });
 
-describe("When I click on a cell", function() {
-  var cell;
+describe("Clicking on a cell", function() {
+
 
   it("shows an X", function() {
-    cell = document.body.querySelector('td')
+    var cell = document.body.querySelector('td')
     cell.click()
-    expect(cell.innerHTML).toBe("X");
+    expect(cell.innerHTML).toEqual("X");
   });
 
-  // it("updates the board array", function() {
-  //   start_board = [ ["X","",""],  ["","",""],  ["","",""] ]
-
-  //   expect(board.grid).toBe(start_board);
-  // });
+  it("updates the board array", function() {
+    var board = new Board();
+    var updated_grid = ["X","","","","","","","",""]
+    expect(board.cells()).toEqual(updated_grid);
+  });
 
 });
 
