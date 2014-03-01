@@ -1,6 +1,6 @@
 ////Tests
 
-var game
+// var game
 
 describe("The Game Board", function() {
   it("is a 3 x 3 grid", function() {
@@ -52,12 +52,13 @@ describe("On My Turn", function() {
       var cell_value_before_click = cell.innerHTML = "Z"
       cell.click()
       expect(cell.innerHTML).toEqual(cell_value_before_click)
-      cell.innerHTML = ""
+        // cell.innerHTML = ""
     })
 
   })
 
 })
+
 
 describe("On Your Turn", function() {
   // var game
@@ -102,7 +103,7 @@ describe("On Your Turn", function() {
       var cell_value_before_click = cell.innerHTML = "Z"
       cell.click()
       expect(cell.innerHTML).toEqual(cell_value_before_click)
-      cell.innerHTML = ""
+        // cell.innerHTML = ""
     })
 
   })
