@@ -2,12 +2,11 @@
 
 //////Game Board View
 describe("The Game Board", function() {
-  // it("is a 3 x 3 grid", function() {
-  //   var board = new Board()
-  //   start_board = [ ["","",""],  ["","",""],  ["","",""] ]
-
-  //   expect(board.grid).toBe(start_board);
-  // });
+  it("is a 3 x 3 grid", function() {
+    var board = new Board()
+    start_board = [ ["","",""],  ["","",""],  ["","",""] ]
+    expect(board.grid).toEqual(start_board);
+  });
 });
 
 describe("Clicking on a cell", function() {
