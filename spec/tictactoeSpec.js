@@ -1,6 +1,5 @@
 ////Tests
 
-//////Game Board View
 describe("The Game Board", function() {
   it("is a 3 x 3 grid", function() {
     var board = new Board()
@@ -9,36 +8,49 @@ describe("The Game Board", function() {
   });
 });
 
-describe("Clicking on a cell", function() {
 
+describe("On My Turn", function() {
 
-  it("shows an X", function() {
-    var cell = document.body.querySelector('td')
-    cell.click()
-    expect(cell.innerHTML).toEqual("X");
+  describe("Clicking on a cell", function() {
+
+    it("shows an X", function() {
+      var cell = document.body.querySelector('td')
+      cell.click()
+      expect(cell.innerHTML).toEqual("X");
+    });
+
+    it("updates the grid", function() {
+      var board = new Board();
+      var updated_grid = [ ["X","",""],  ["","",""],  ["","",""] ]
+      expect(board.grid).toEqual(updated_grid);
+    });
+
   });
 
-  it("updates the grid", function() {
-    var board = new Board();
-    var updated_grid = [ ["X","",""],  ["","",""],  ["","",""] ]
-    expect(board.grid).toEqual(updated_grid);
-  });
+})
 
-});
+describe("On Your Turn", function() {
+
+    it("shows an O", function() {
+      var cell = document.body.querySelector('td')
+      cell.click()
+      expect(cell.innerHTML).toEqual("O");
+    });
+
+    it("updates the grid", function() {
+      var board = new Board();
+      var updated_grid = [ ["O","",""],  ["","",""],  ["","",""] ]
+      expect(board.grid).toEqual(updated_grid);
+    });
+
+})
 
 
-
-//[ ["","",""],  ["","",""],  ["","",""] ]
-// the board should be a 3 x 3 grid
-
-//At the beginning of the game the board should be empty
 
 //At the end of the game a row, column, or digonal should be full or else the board should be full
 
 
 //////Game Play
-
-//If I click on a square I should see an x
 
 //If I click on the same square twice, nothing should happen
 
