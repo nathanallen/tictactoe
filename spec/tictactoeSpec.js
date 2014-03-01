@@ -37,7 +37,10 @@ describe("On My Turn", function() {
     })
 
     it("ends the turn", function(){
-      expect(game.currentPlayerSymbol).toEqual("O")
+      var cell = document.body.querySelectorAll('td')[5]
+      cell.click()
+      expect(game.currentPlayerSymbol()).toEqual("O")
+      cell.innerHTML = ""
     })
 
   })
@@ -79,12 +82,15 @@ describe("On Your Turn", function() {
 
     it("updates the grid", function() {
       var board = new Board()
+
       var updated_grid = [ ["X","O",""],  ["","",""],  ["","",""] ]
       expect(board.grid).toEqual(updated_grid)
     })
 
     it("ends the turn", function(){
-      expect(game.currentPlayerSymbol).toEqual("X")
+      var cell = document.body.querySelectorAll('td')[4]
+      cell.click()
+      expect(game.currentPlayerSymbol()).toEqual("X")
     })
 
   })
