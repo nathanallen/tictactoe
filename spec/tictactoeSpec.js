@@ -19,10 +19,10 @@ describe("Clicking on a cell", function() {
     expect(cell.innerHTML).toEqual("X");
   });
 
-  it("updates the board array", function() {
+  it("updates the grid", function() {
     var board = new Board();
-    var updated_grid = ["X","","","","","","","",""]
-    expect(board.cells()).toEqual(updated_grid);
+    var updated_grid = [ ["X","",""],  ["","",""],  ["","",""] ]
+    expect(board.grid).toEqual(updated_grid);
   });
 
 });
