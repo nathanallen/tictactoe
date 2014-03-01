@@ -8,10 +8,9 @@ describe("The Game Board", function() {
   });
 });
 
-
 describe("On My Turn", function() {
 
-  describe("Clicking on a cell", function() {
+  describe("Clicking on an empty cell", function() {
 
     it("shows an X", function() {
       var cell = document.body.querySelector('td')
@@ -27,21 +26,47 @@ describe("On My Turn", function() {
 
   });
 
+  describe("Clicking on a taken cell", function() {
+
+    it("does nothing", function() {
+      var cell = document.body.querySelectorAll('td')[8]
+      var cell_value_before_click = cell.innerHTML = "Z"
+      cell.click()
+      expect(cell.innerHTML).toEqual(cell_value_before_click);
+    });
+
+  });
+
 })
 
 describe("On Your Turn", function() {
 
+  describe("Clicking on an empty cell", function() {
+
     it("shows an O", function() {
-      var cell = document.body.querySelector('td')
+      var cell = document.body.querySelectorAll('td')[1]
       cell.click()
       expect(cell.innerHTML).toEqual("O");
     });
 
     it("updates the grid", function() {
       var board = new Board();
-      var updated_grid = [ ["O","",""],  ["","",""],  ["","",""] ]
+      var updated_grid = [ ["X","O",""],  ["","",""],  ["","",""] ]
       expect(board.grid).toEqual(updated_grid);
     });
+
+  })
+
+  describe("Clicking on a taken cell", function() {
+
+    it("does nothing", function() {
+      var cell = document.body.querySelectorAll('td')[7]
+      var cell_value_before_click = cell.innerHTML = "Z"
+      cell.click()
+      expect(cell.innerHTML).toEqual(cell_value_before_click);
+    });
+
+  });
 
 })
 
