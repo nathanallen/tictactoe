@@ -36,6 +36,10 @@ describe("On My Turn", function() {
       expect(board.grid).toEqual(updated_grid)
     })
 
+    it("ends the turn", function(){
+      expect(game.currentPlayerSymbol).toEqual("O")
+    })
+
   })
 
   describe("Clicking on a taken cell", function() {
@@ -77,6 +81,10 @@ describe("On Your Turn", function() {
       var board = new Board()
       var updated_grid = [ ["X","O",""],  ["","",""],  ["","",""] ]
       expect(board.grid).toEqual(updated_grid)
+    })
+
+    it("ends the turn", function(){
+      expect(game.currentPlayerSymbol).toEqual("X")
     })
 
   })
