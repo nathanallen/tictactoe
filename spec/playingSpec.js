@@ -1,10 +1,12 @@
-describe("The Game Board", function(){
-  it("is a 3 x 3 grid", function(){
-    start_board = [ ["","",""],  ["","",""],  ["","",""] ]
-    expect(board.getGrid()).toEqual(start_board)
-  })
+afterEach(function(){
+  resetBoard()
+  resetActiveCell()
 })
 
+beforeEach(function(){
+  game = new Game()
+  board = new Board()
+})
 
 describe("On My Turn", function(){
 

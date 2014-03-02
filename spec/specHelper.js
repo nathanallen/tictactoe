@@ -35,13 +35,3 @@ function buildTestGrid(index_of_click,mark){
   grid[Math.floor(index_of_click/3)][index_of_click%3] = mark
   return grid
 }
-
-afterEach(function(){
-  resetBoard()
-  resetActiveCell()
-})
-
-beforeEach(function(){
-  game = new Game()
-  board = new Board()
-})
