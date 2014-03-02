@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function(){
+var game = new Game()
 
-  // var game //already defined in tictactoeSpec.js
+document.addEventListener('DOMContentLoaded', function(){
 
   cells = document.body.querySelectorAll('td')
   Array.prototype.forEach.call(cells, function(cell){
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     })
   })
-
 
 })
 
