@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
       var cell_value = e.target.innerHTML
       if (cell_value.length == 0){
         e.target.innerHTML = game.currentPlayerSymbol()
-        game.nextTurn()
+        game.evaluate()
       }
     })
   })
