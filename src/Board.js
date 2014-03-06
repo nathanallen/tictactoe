@@ -27,7 +27,7 @@ Board.prototype.getGrid = function(){
 
   }
 
-  var row_nodes = document.body.querySelectorAll('tr')
+  var row_nodes = document.querySelectorAll('tr')
   var grid = extractGridValues(row_nodes)
 
   return grid
