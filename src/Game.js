@@ -25,14 +25,18 @@ Game.prototype.currentPlayerSymbol = function(){
 }
 
 Game.prototype.checkForWinner = function(cb){
-  cb(false)
-  // var current_grid = this.board.getGrid()
-  // return this.checkRows(current_grid)
+  var current_grid = this.board.getGrid()
+  if ( this.checkRows(current_grid) ){
+    cb(true)
+  } else {
+    cb(false)
+  }
 }
 
 Game.prototype.checkRows = function(current_grid){
 
   current_grid.forEach(function(row){
+    //impliment this
     return false
   })
 
