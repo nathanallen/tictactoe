@@ -6,11 +6,12 @@ function Game(){
 }
 
 Game.prototype.evaluate = function(){
+  var that = this
   this.checkForWinner(function(gameover){
     if (gameover){
       //
     } else {
-      this.nextTurn()
+      that.nextTurn()
     }
   })
 }
@@ -24,8 +25,9 @@ Game.prototype.currentPlayerSymbol = function(){
 }
 
 Game.prototype.checkForWinner = function(cb){
-  var current_grid = this.board.getGrid()
-  return this.checkRows(current_grid)
+  cb(false)
+  // var current_grid = this.board.getGrid()
+  // return this.checkRows(current_grid)
 }
 
 Game.prototype.checkRows = function(current_grid){
