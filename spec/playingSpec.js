@@ -1,13 +1,3 @@
-afterEach(function(){
-  resetBoard()
-  resetActiveCell()
-})
-
-beforeEach(function(){
-  game = new Game()
-  board = new Board()
-})
-
 describe("On My Turn", function(){
 
   it("the symbol is an X", function(){
