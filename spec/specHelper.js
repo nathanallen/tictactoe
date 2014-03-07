@@ -13,8 +13,8 @@ function resetBoard(){
 }
 
 function resetActiveCell(){
-  if (cell) {
-    cell.innerHTML = ""
+  if (target_cell) {
+    target_cell.innerHTML = ""
   }
 }
 
@@ -24,8 +24,8 @@ function randomCellIndex(){
 
 function randomlyClick(cb,mark){
   var random_index = randomCellIndex()
-  cell = document.body.querySelectorAll('td')[random_index]
-  cell.click()
+  target_cell = document.body.querySelectorAll('td')[random_index]
+  target_cell.click()
 
   if (cb){
     return cb(random_index,mark)

@@ -19,7 +19,7 @@ describe("On My Turn", function(){
 
     it("shows an X", function(){
       randomlyClick()
-      expect(cell.innerHTML).toEqual("X")
+      expect(target_cell.innerHTML).toEqual("X")
     })
 
     it("updates the grid", function(){
@@ -37,10 +37,10 @@ describe("On My Turn", function(){
   describe("Clicking on a taken cell", function(){
 
     it("does nothing", function(){
-      cell = document.body.querySelectorAll('td')[8]
-      var cell_value_before_click = cell.innerHTML = "Z"
-      cell.click()
-      expect(cell.innerHTML).toEqual(cell_value_before_click)
+      target_cell = document.body.querySelectorAll('td')[8]
+      var cell_value_before_click = target_cell.innerHTML = "Z"
+      target_cell.click()
+      expect(target_cell.innerHTML).toEqual(cell_value_before_click)
     })
 
   })
@@ -63,7 +63,7 @@ describe("On Your Turn", function(){
 
     it("shows an O", function(){
       randomlyClick()
-      expect(cell.innerHTML).toEqual("O")
+      expect(target_cell.innerHTML).toEqual("O")
     })
 
     it("updates the grid", function(){
@@ -81,10 +81,10 @@ describe("On Your Turn", function(){
   describe("Clicking on a taken cell", function(){
 
     it("does nothing", function(){
-      cell = document.body.querySelectorAll('td')[0]
-      var cell_value_before_click = cell.innerHTML = "Z"
-      cell.click()
-      expect(cell.innerHTML).toEqual(cell_value_before_click)
+      target_cell = document.body.querySelectorAll('td')[0]
+      var cell_value_before_click = target_cell.innerHTML = "Z"
+      target_cell.click()
+      expect(target_cell.innerHTML).toEqual(cell_value_before_click)
     })
 
   })
