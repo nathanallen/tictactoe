@@ -1,10 +1,4 @@
-var game, playingBoard, board, cell
-
-document.addEventListener('DOMContentLoaded', function(){
-  playingBoard = document.body.querySelector('.game-board')
-  cells = document.body.querySelectorAll('td');
-
-})
+var game, playingBoard, board, target_cell
 
 function resetBoard(){
   playingBoard = playingBoard || document.body.querySelector('.game-board')
