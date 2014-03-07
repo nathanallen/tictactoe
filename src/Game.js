@@ -26,7 +26,7 @@ Game.prototype.currentPlayerSymbol = function(){
 
 Game.prototype.checkForWinner = function(cb){
   var current_grid = this.board.getGrid()
-  if ( this.checkRows(current_grid) ){
+  if ( this.checkRows(current_grid) || this.checkColumns(current_grid) ){
     cb(true)
   } else {
     cb(false)
@@ -35,6 +35,22 @@ Game.prototype.checkForWinner = function(cb){
 
 Game.prototype.checkRows = function(current_grid){
   var streak = false
+   current_grid.forEach(function(row){
+      if (!(row[0] == "") && row[0] == row[1] && row[1] == row[2]){
+        streak = true
+      }
+    })
+  return streak
+}
+
+Game.prototype.checkColumns = function(current_grid){
+  var streak = false
+  i = 3
+  if (i--){
+    if (!(current_grid[0][i] == "") && current_grid[0][i] == current_grid[1][i] && current_grid[1][i] == current_grid[2][i]){
+      streak = true
+    }
+  }
    current_grid.forEach(function(row){
       if (!(row[0] == "") && row[0] == row[1] && row[1] == row[2]){
         streak = true
