@@ -1,4 +1,4 @@
-var game, playingBoard, board, target_cell
+var playingBoard, board, target_cell
 
 function resetBoard(){
   playingBoard = playingBoard || document.body.querySelector('.game-board')
@@ -52,7 +52,7 @@ function buildTestGrid(index_of_click,mark){
 }
 
 afterEach(function(){
-  viewControl.resetBoard()
+  game.viewControl.resetBoard()
   resetActiveCell()
 })
 

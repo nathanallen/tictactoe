@@ -3,12 +3,14 @@ function Game(){
   this.turn = 0
   this.over = false
   this.board = new Board()
+  this.viewControl = new View()
 }
 
 Game.prototype.evaluate = function(){
   var that = this
   this.checkForWinner(function(we_have_a_winner){
     if (we_have_a_winner){
+      alert("Player " + that.currentPlayerSymbol() + " wins!")
       //game.over = true
     } else {
       that.nextTurn()

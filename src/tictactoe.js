@@ -1,6 +1,5 @@
-var viewControl, cells
+var game, cells
 
 document.addEventListener('DOMContentLoaded', function(){
-  var game = new Game()
-  viewControl = new View()
+  game = new Game()
 })

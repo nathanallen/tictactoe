@@ -2,13 +2,15 @@ function View(){
   this.playingBoard = document.querySelector('.game-board')
   this.emptyBoardHTML = document.querySelector('.game-board').innerHTML
   this.cells = document.body.querySelectorAll('td') //
+  this.setClickListeners()
 }
 
 View.prototype.setClickListeners = function(){
+  var that = this
   cells = document.body.querySelectorAll('td') //
   Array.prototype.forEach.call(cells, function(cell){
     cell.addEventListener('click', function(e){
-      viewControl.markCell(e)
+      that.markCell(e)
     })
   })
 }
