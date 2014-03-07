@@ -27,3 +27,7 @@ View.prototype.markCell = function(e){
     game.evaluate() //
   }
 }
+
+View.prototype.weHaveAWinner = function(player){
+  alert("Player " + player + " wins!")
+}

@@ -10,8 +10,7 @@ Game.prototype.evaluate = function(){
   var that = this
   this.checkForWinner(function(we_have_a_winner){
     if (we_have_a_winner){
-      alert("Player " + that.currentPlayerSymbol() + " wins!")
-      //game.over = true
+      that.viewControl.weHaveAWinner(that.currentPlayerSymbol())
     } else {
       that.nextTurn()
     }
