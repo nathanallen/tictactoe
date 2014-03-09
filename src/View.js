@@ -21,13 +21,16 @@ View.prototype.resetBoard = function(){
 }
 
 View.prototype.markCell = function(e){
-  var cell_value = e.target.innerHTML
+  var cell_value = e.target.innerHTML  // remove "Z" from tests
   if (cell_value.length == 0){
     e.target.innerHTML = game.currentPlayerSymbol() //
     game.evaluate() //
   }
 }
 
-View.prototype.weHaveAWinner = function(player){
-  alert("Player " + player + " wins!")
+View.prototype.weHaveAWinner = function(player, cb){
+  var confirmation = confirm("Player " + player + " wins! Next game?")
+  if (confirmation){
+    cb()
+  }
 }

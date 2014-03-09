@@ -1,5 +1,6 @@
 function Game(){
   this.players = ["X","O"]
+  this.round = 1
   this.turn = 0
   this.over = false
   this.board = new Board()
@@ -10,7 +11,9 @@ Game.prototype.evaluate = function(){
   var that = this
   this.checkForWinner(function(we_have_a_winner){
     if (we_have_a_winner){
-      that.viewControl.weHaveAWinner(that.currentPlayerSymbol())
+      that.viewControl.weHaveAWinner(that.currentPlayerSymbol(), function(){
+        that.reset()
+      })
     } else {
       that.nextTurn()
     }
@@ -64,4 +67,11 @@ Game.prototype.checkDiagonals = function(current_grid){
     }
   }
   return this.over
+}
+
+Game.prototype.reset = function(){
+  this.round += 1
+  this.turn = 0
+  this.over = false
+  this.viewControl.resetBoard()
 }
