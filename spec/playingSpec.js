@@ -28,9 +28,11 @@ describe("On My Turn", function(){
 
     it("does nothing", function(){
       target_cell = document.body.querySelectorAll('td')[8]
-      var cell_value_before_click = target_cell.innerHTML = "Z"
       target_cell.click()
-      expect(target_cell.innerHTML).toEqual(cell_value_before_click)
+      var initial_cell_value = target_cell.innerHTML
+      target_cell.click()
+      var cell_value = target_cell.innerHTML
+      expect(cell_value).toEqual(initial_cell_value)
     })
 
   })
@@ -71,10 +73,12 @@ describe("On Your Turn", function(){
   describe("Clicking on a taken cell", function(){
 
     it("does nothing", function(){
-      target_cell = document.body.querySelectorAll('td')[0]
-      var cell_value_before_click = target_cell.innerHTML = "Z"
+      target_cell = document.body.querySelectorAll('td')[8]
       target_cell.click()
-      expect(target_cell.innerHTML).toEqual(cell_value_before_click)
+      var initial_cell_value = target_cell.innerHTML
+      target_cell.click()
+      var cell_value = target_cell.innerHTML
+      expect(cell_value).toEqual(initial_cell_value)
     })
 
   })
