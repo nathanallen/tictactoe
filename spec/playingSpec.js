@@ -1,13 +1,3 @@
-afterEach(function(){
-  resetBoard()
-  resetActiveCell()
-})
-
-beforeEach(function(){
-  game = new Game()
-  board = new Board()
-})
-
 describe("On My Turn", function(){
 
   it("the symbol is an X", function(){
@@ -19,7 +9,7 @@ describe("On My Turn", function(){
 
     it("shows an X", function(){
       randomlyClick()
-      expect(cell.innerHTML).toEqual("X")
+      expect(target_cell.innerHTML).toEqual("X")
     })
 
     it("updates the grid", function(){
@@ -37,10 +27,12 @@ describe("On My Turn", function(){
   describe("Clicking on a taken cell", function(){
 
     it("does nothing", function(){
-      cell = document.body.querySelectorAll('td')[8]
-      var cell_value_before_click = cell.innerHTML = "Z"
-      cell.click()
-      expect(cell.innerHTML).toEqual(cell_value_before_click)
+      target_cell = document.body.querySelectorAll('td')[8]
+      target_cell.click()
+      var initial_cell_value = target_cell.innerHTML
+      target_cell.click()
+      var cell_value = target_cell.innerHTML
+      expect(cell_value).toEqual(initial_cell_value)
     })
 
   })
@@ -63,7 +55,7 @@ describe("On Your Turn", function(){
 
     it("shows an O", function(){
       randomlyClick()
-      expect(cell.innerHTML).toEqual("O")
+      expect(target_cell.innerHTML).toEqual("O")
     })
 
     it("updates the grid", function(){
@@ -81,10 +73,12 @@ describe("On Your Turn", function(){
   describe("Clicking on a taken cell", function(){
 
     it("does nothing", function(){
-      cell = document.body.querySelectorAll('td')[0]
-      var cell_value_before_click = cell.innerHTML = "Z"
-      cell.click()
-      expect(cell.innerHTML).toEqual(cell_value_before_click)
+      target_cell = document.body.querySelectorAll('td')[8]
+      target_cell.click()
+      var initial_cell_value = target_cell.innerHTML
+      target_cell.click()
+      var cell_value = target_cell.innerHTML
+      expect(cell_value).toEqual(initial_cell_value)
     })
 
   })
