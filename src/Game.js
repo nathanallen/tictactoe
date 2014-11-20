@@ -48,8 +48,7 @@ Game.prototype.checkRows = function(current_grid){
 }
 
 Game.prototype.checkColumns = function(current_grid){
-  i = 3
-  if (i--){
+  for (var i = 0; i < 3; i++){
     if (current_grid[0][i] && current_grid[0][i] == current_grid[1][i] && current_grid[1][i] == current_grid[2][i]){
       this.over = true
     }
